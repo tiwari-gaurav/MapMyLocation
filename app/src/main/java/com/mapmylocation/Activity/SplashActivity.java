@@ -5,8 +5,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
-import com.markmypoint.R;
-import com.markmypoint.Utils.TypeWriter;
+import com.mapmylocation.R;
+import com.mapmylocation.utils.TypeWriter;
+
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -30,7 +31,7 @@ public class SplashActivity extends AppCompatActivity {
 
         //Add a character every 150ms
         mAppText.setCharacterDelay(150);
-        mAppText.animateText("Mark My Points");
+        mAppText.animateText("Map My Points");
 
         new Handler().postDelayed(new Runnable() {
 

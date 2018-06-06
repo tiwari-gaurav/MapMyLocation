@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int LOCATION_UPDATE_MIN_TIME = 5000;
     private GoogleMap mMap;
     private LocationManager mLocationManager;
-    private ImageView mGpsStatusIcon;
+
     private TextView mGpsLabel;
     private Chronometer mChronometer;
 
@@ -100,12 +100,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        mGpsLabel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
         mToggleGps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -160,8 +155,6 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        mGpsStatusIcon = (ImageView) findViewById(R.id.gpsStatusIcon);
-        mGpsLabel = (TextView) findViewById(R.id.textGpsStatusMessage);
         mToggleGps = (ToggleButton)findViewById(R.id.toggle_gps);
         points = new ArrayList<LatLng>();
         mChronometer = (Chronometer) findViewById(R.id.chronometer);
