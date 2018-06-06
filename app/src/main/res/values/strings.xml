@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MapMyLocation</string>
+    <string name="error_location_provider">Error in providing Location</string>
+    <string name="no_google_playservice_available">Play Service is not available</string>
+    <string name="title_alert_no_intenet">No Internet</string>
+    <string name="msg_alert_no_internet">Please check your internet connection</string>
+    <string name="permission_rationale">Please give location permission</string>
+</resources>

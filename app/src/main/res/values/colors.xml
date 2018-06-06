@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="gps_text_error">#ff7182</color>
+    <color name="gps_turn_on_text_color">#58dd7c</color>
+    <color name="textColorPrimaryInverse">#505862</color>
+    <color name="tab_selected">#FFFF553B</color>
+    <color name="map_screen_squircle_bg">#99FFFFFF</color>
+    <color name="progress_dash_color">#D5D5D5</color>
+    <color name="green">#43cb83</color>
+    <color name="new_text_deselect">#778291</color>
+    <color name="bright_foreground_light_disabled">#80000000</color>
+</resources>

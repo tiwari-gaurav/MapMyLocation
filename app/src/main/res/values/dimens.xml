@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="map_screen_progress_layout_margin">15dp</dimen>
+    <dimen name="map_screen_progress_bottom_margin">25dp</dimen>
+    <dimen name="map_screen_squircle_margin">2.5dp</dimen>
+    <dimen name="map_screen_squircle_width">138dp</dimen>
+    <dimen name="map_screen_squircle_height">70dp</dimen>
+    <dimen name="map_screen_dash_thickness">1.5dp</dimen>
+    <dimen name="map_screen_dash_corner_radius">15dp</dimen>
+    <dimen name="move_screen_squircle_margin">6dp</dimen>
+    <dimen name="move_screen_dash_width">4dp</dimen>
+    <dimen name="move_screen_dash_gap">4dp</dimen>
+    <dimen name="move_screen_dash_thickness">2dp</dimen>
+    <dimen name="move_screen_dash_corner_radius">25dp</dimen>
+
+</resources>

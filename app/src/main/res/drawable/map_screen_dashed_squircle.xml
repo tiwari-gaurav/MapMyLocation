@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape>
+            <solid android:color="@color/map_screen_squircle_bg" />
+            <stroke
+                android:width="@dimen/map_screen_dash_thickness"
+                android:color="@color/progress_dash_color"
+                android:dashGap="@dimen/move_screen_dash_gap"
+                android:dashWidth="@dimen/move_screen_dash_width" />
+            <corners
+                android:bottomLeftRadius="@dimen/map_screen_dash_corner_radius"
+                android:bottomRightRadius="@dimen/map_screen_dash_corner_radius"
+                android:topLeftRadius="@dimen/map_screen_dash_corner_radius"
+                android:topRightRadius="@dimen/map_screen_dash_corner_radius" />
+        </shape>
+    </item>
+</layer-list>
