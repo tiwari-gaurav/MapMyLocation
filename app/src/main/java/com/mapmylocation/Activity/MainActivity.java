@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     private GoogleMap mMap;
     private LocationManager mLocationManager;
 
-    private TextView mGpsLabel;
+    private ImageView mGpsNavgation;
     private Chronometer mChronometer;
 
     private ToggleButton mToggleGps;
@@ -63,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
     private int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private Location location = null;
     private PolylineOptions mOptions;
-    Polyline line;
+
     private ArrayList<LatLng> points;
-   private float MAP_ZOOM_LEVEL = 18f;
+    private float MAP_ZOOM_LEVEL = 18f;
 
     /**
      * Code used in requesting runtime permissions.
@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     private boolean mAlreadyStartedService = false;
-
 
 
     @Override
@@ -100,17 +99,22 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+        mGpsNavgation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pointCurrentLocation();
+            }
+        });
 
         mToggleGps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mToggleGps.isChecked()){
+                if (mToggleGps.isChecked()) {
                     startLocationService();
                     mChronometer.setBase(SystemClock.elapsedRealtime());
                     mChronometer.start();
                     drawMarker();
-                }
-                else {
+                } else {
                     Intent intent = new Intent(MainActivity.this, BackgroundService.class);
                     stopService(intent);
                     mAlreadyStartedService = false;
@@ -119,10 +123,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-
-
 
 
     }
@@ -155,9 +155,10 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        mToggleGps = (ToggleButton)findViewById(R.id.toggle_gps);
+        mToggleGps = (ToggleButton) findViewById(R.id.toggle_gps);
         points = new ArrayList<LatLng>();
         mChronometer = (Chronometer) findViewById(R.id.chronometer);
+        mGpsNavgation = (ImageView) findViewById(R.id.navigation);
     }
 
 
@@ -191,8 +192,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
     private void drawMarker() {
         if (mMap != null) {
             mMap.clear();
@@ -200,18 +199,18 @@ public class MainActivity extends AppCompatActivity {
             if (points != null && points.size() > 0) {
                 int locationsCount = points.size();
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(points.get(locationsCount - 1), MAP_ZOOM_LEVEL));
-               // LatLng gps = new LatLng(location.getLatitude(), location.getLongitude());
+                // LatLng gps = new LatLng(location.getLatitude(), location.getLongitude());
                 mOptions = new PolylineOptions();
                 mOptions.addAll(points);
                 mOptions.width(10);
                 mOptions.color(ContextCompat.getColor(this, R.color.textColorPrimaryInverse));
                 mMap.addPolyline(mOptions);
-                if(points.size()>0){
+                if (points.size() > 0) {
                     mMap.addMarker(new MarkerOptions()
-                            .position(points.get(points.size()-1))
+                            .position(points.get(points.size() - 1))
                             .title("End Position"))
                             .setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
-                }else {
+                } else {
                     mMap.addMarker(new MarkerOptions()
                             .position(points.get(0))
                             .title("Current Position"))
@@ -219,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(points.get(0), 12));
-            }else{
+            } else {
                 pointCurrentLocation();
             }
         }
@@ -284,7 +283,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
 
 
     @Override
@@ -367,8 +365,7 @@ public class MainActivity extends AppCompatActivity {
         //And it will be keep running until you close the entire application from task manager.
         //This method will executed only once.
 
-        if (!mAlreadyStartedService ) {
-
+        if (!mAlreadyStartedService) {
 
 
             //Start location sharing service to app server.........

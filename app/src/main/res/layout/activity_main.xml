@@ -17,7 +17,15 @@
     </FrameLayout>
 
 
-
+    <ImageView
+        android:id="@+id/navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="22dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/ic_map_nav" />
 
     <ToggleButton
         android:id="@+id/toggle_gps"
